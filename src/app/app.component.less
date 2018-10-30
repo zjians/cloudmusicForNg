@@ -1,0 +1,42 @@
+@import url('./assets/less/reset.less');
+@import url('./assets/less/base.less');
+:host {
+  text-align: center;
+}
+
+:host ::ng-deep .ant-layout-header{
+  background: @baseColor;
+  height: 75px;
+  line-height: 75px;
+  padding: 0;
+}
+:host ::ng-deep .ant-layout-footer {
+  background: @bgGrey;
+  color: #fff;
+}
+
+:host ::ng-deep .ant-layout-footer {
+  line-height: 1.5;
+  border-top: 1px solid @lineColor;
+}
+
+:host ::ng-deep .ant-layout-sider {
+  background: @bgGrey;
+  color: #fff;
+  line-height: 120px;
+  border-right: 1px solid @lineColor;
+}
+
+:host ::ng-deep .ant-layout-content {
+  color: #fff;
+  min-height: 120px;
+  line-height: 120px;
+}
+
+:host > ::ng-deep .ant-layout {
+  margin-bottom: 48px;
+}
+
+:host ::ng-deep .ant-layout:last-child {
+  margin: 0;
+}

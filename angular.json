@@ -33,11 +33,20 @@
             ],
             "styles": [
               "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.less"
+              "src/styles.less",
+              "src/app/assets/less/theme.less"
             ],
             "scripts": []
           },
           "configurations": {
+            "hmr": {
+              "fileReplacements": [
+               {
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.hmr.ts"
+               }
+              ]
+             },
             "production": {
               "fileReplacements": [
                 {
@@ -65,6 +74,10 @@
           "configurations": {
             "production": {
               "browserTarget": "project:build:production"
+            },
+            "hmr": {
+              "browserTarget": "project:build:hmr",
+              "hmr": true
             }
           }
         },

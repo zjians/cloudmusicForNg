@@ -1,0 +1,40 @@
+.app-header{
+  color: #fff;
+  .tool-wrapper{
+    height: 20px;
+    margin-top:4px;
+    width: 100px;
+    &:hover{
+      i{
+        visibility: visible!important;
+      }
+    }
+    &>span{
+      width: 18px;
+      height: 18px;
+      border-radius: 9px;
+      margin-left:10px;
+      line-height: 18px;
+      vertical-align: top;
+      float: left;
+      cursor: pointer;
+      i{
+        display: inline-block;
+        transform: translate(0, -1px);
+        font-style: normal;
+        color: #000;
+        visibility: hidden;
+        opacity: 0.4;
+      }
+    }
+    .close-point{
+      background: #eb6a5f;
+    }
+    .min-point{
+      background: #f5be50;
+    }
+    .max-point{
+      background: #62c556;
+    }
+  }
+}
