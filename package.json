@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "cd ./api && npm run start & npm run dev",
-    "dev:hmr": "ng serve --port=8080 --configuration hmr",
-    "dev": "ng serve --port=8081",
+    "dev": "ng serve --port=8080 --configuration hmr",
     "prod": "ng serve --port=8080 --prod",
     "build": "ng build",
     "test": "ng test",

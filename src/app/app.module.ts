@@ -10,6 +10,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { HeaderComponent } from './pages/header/header.component';
 import { AsideMenuComponent } from './pages/aside-menu/aside-menu.component';
+import { AsideMenuItemComponent } from './pages/aside-menu-item/aside-menu-item.component';
 
 registerLocaleData(zh);
 
@@ -18,6 +19,7 @@ registerLocaleData(zh);
     AppComponent,
     HeaderComponent,
     AsideMenuComponent,
+    AsideMenuItemComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideMenuComponent implements OnInit {
 
+  menuList: any[];
+
   constructor() { }
 
   ngOnInit() {
+    this.menuList = [
+      {
+        icon: '',
+        title: '',
+        url: ''
+      }
+    ];
   }
 
 }
