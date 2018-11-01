@@ -80,6 +80,7 @@
       margin-top: 15px;
       padding-bottom: 20px;
       border-bottom:1px solid #eaeaea;
+      margin-bottom: 5px;
       &>div{
         flex: 1;
         border-right: 1px solid #eaeaea;
@@ -95,11 +96,34 @@
     .popover-nav-item{
       display: flex;
       justify-content: space-around;
+      height: 32px;
+      align-items: center;
+      cursor: pointer;
+      margin: auto -16px;
+      padding: 0 16px;
+      &:hover{
+        background-color: darken(#fff, 10%);
+      }
       .item-left{
         flex:1;
+        &>span:first-child, &>i:first-child{
+          margin-right:10px;
+        }
       }
       .item-right{
         width: 50px;
+        text-align: right;
+      }
+    }
+    .popover-footer{
+      margin: 0 -16px;
+      border-top:1px solid @lineColor;
+      padding: 10px 16px;
+      overflow: hidden;
+      margin-bottom: -12px;
+      cursor: pointer;
+      &:hover{
+        background-color: darken(#fff, 10%);
       }
     }
   }

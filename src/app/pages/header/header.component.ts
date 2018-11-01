@@ -53,7 +53,6 @@ export class HeaderComponent implements OnInit {
   }
 
   submitForm (event, value) {
-    console.log(12313132);
     console.log(value);
     this.loginApi.getLogin({
       phone: value.userName,
@@ -87,6 +86,10 @@ export class HeaderComponent implements OnInit {
     } else if (document.msExitFullscreen) {
       document.msExitFullscreen();
     }
+  }
+
+  handleLoginOut () {
+    console.log('退出登陆');
   }
 
 }

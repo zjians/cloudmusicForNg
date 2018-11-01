@@ -43,13 +43,36 @@
         </div>
         <div class='popover-nav-item'>
           <div class='item-left'>
-            <span>icon</span>
+            <span class='wangyi-icon-pengyou'></span>
             <span>会员中心</span>
           </div>
           <div class='item-right'>
             <span>1</span>
-            <span class='wangyi-icon-shouqi2'></span>
+            <i nz-icon type="right" theme="outline"></i>
           </div>
+        </div>
+        <div class='popover-nav-item'>
+          <div class='item-left'>
+            <span class='wangyi-icon-shezhi'></span>
+            <span>个人中心设置</span>
+          </div>
+          <div class='item-right'>
+            <span>1</span>
+            <i nz-icon type="right" theme="outline"></i>
+          </div>
+        </div>
+        <div class='popover-nav-item'>
+          <div class='item-left'>
+            <i nz-icon type="phone" theme="outline"></i>
+            <span>绑定社交账号</span>
+          </div>
+          <div class='item-right'>
+            <span>1</span>
+            <i nz-icon type="right" theme="outline"></i>
+          </div>
+        </div>
+        <div class='popover-footer' (click)='handleLoginOut()'>
+          <i nz-icon type="poweroff" theme="outline"></i>退出登录
         </div>
       </div>
     </ng-template>
