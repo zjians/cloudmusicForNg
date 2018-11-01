@@ -1,5 +1,9 @@
+@import url('../../assets/less/base.less');
 .app-header{
   color: #fff;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
   .tool-wrapper{
     height: 20px;
     margin-top:4px;
@@ -35,6 +39,68 @@
     }
     .max-point{
       background: #62c556;
+    }
+  }
+  .login-wrapper{
+    position: absolute;
+    right: 0;
+    top:0;
+    height: 100%;
+    width: 100px;
+    border-left:1px solid darken(@baseColor, 10%);
+    .popover-wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .login-arrow-down{
+      border:7px solid transparent;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-top-color: #fff;
+      transform: translate(5px, 8px);
+    }
+  }
+}
+::ng-deep .login-wrapper--popover_content__wrapper{
+  transform: translate(-34px, -10px);
+  width: 310px;
+  .popover-content{
+    .popover-header{
+      display: flex;
+      align-items: center;
+      .popover-userName{
+        margin-left: 15px;
+      }
+    }
+    .popover-message{
+      display: flex;
+      margin-top: 15px;
+      padding-bottom: 20px;
+      border-bottom:1px solid #eaeaea;
+      &>div{
+        flex: 1;
+        border-right: 1px solid #eaeaea;
+        padding-left:5px;
+        &>span:first-child {
+          font-weight: 700;
+        }
+      }
+      &>div:last-child{
+        border-right: none;
+      }
+    }
+    .popover-nav-item{
+      display: flex;
+      justify-content: space-around;
+      .item-left{
+        flex:1;
+      }
+      .item-right{
+        width: 50px;
+      }
     }
   }
 }

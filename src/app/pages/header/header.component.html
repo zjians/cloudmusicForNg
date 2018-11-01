@@ -3,14 +3,58 @@
     <span class='close-point'>
       <i>x</i>
     </span>
-    <span class='min-point'>
+    <span class='min-point' (click)='handleMin()'>
       <i>-</i>
     </span>
-    <span class='max-point'>
+    <span class='max-point' (click)='handleMax()'>
       <i>+</i>
     </span>
   </div>
-  <button nz-button nzType="default" style='float:right' (click)='handleLogin()'>login9999</button>
+  <div class='login-wrapper'>
+    <div class='popover-wrapper'
+      nz-popover
+      nzTrigger='click'
+      [nzContent]='contentTemplate'
+      nzPlacement='bottomRight'
+      nzOverlayClassName='login-wrapper--popover_content__wrapper'
+      >
+      <nz-avatar nzIcon="anticon anticon-user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+      <span class='login-arrow-down'></span>
+    </div>
+    <ng-template #contentTemplate>
+      <div class='popover-content'>
+        <div class='popover-header'>
+            <nz-avatar nzSize="large" nzIcon="anticon anticon-user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+            <span class='popover-userName'>守护四叶草</span>
+        </div>
+        <div class='popover-message'>
+          <div>
+            <span>0</span><br/>
+            <span>动态</span>
+          </div>
+          <div>
+            <span>1</span><br/>
+            <span>关注</span>
+          </div>
+          <div>
+            <span>2</span><br/>
+            <span>粉丝</span>
+          </div>
+        </div>
+        <div class='popover-nav-item'>
+          <div class='item-left'>
+            <span>icon</span>
+            <span>会员中心</span>
+          </div>
+          <div class='item-right'>
+            <span>1</span>
+            <span class='wangyi-icon-shouqi2'></span>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <!-- <button nz-button nzType="default" style='float:right' (click)='handleLogin()'>login9999</button> -->
   <nz-modal [(nzVisible)]="isVisible" nzTitle="" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
     <button nz-button nzType="default" (click)="handleToggleLogin()" *ngIf="!showLoginForm">注册</button>
     <div *ngIf="showLoginForm">
