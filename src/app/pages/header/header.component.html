@@ -13,10 +13,12 @@
   <div class='login-wrapper'>
     <div class='popover-wrapper'
       nz-popover
-      nzTrigger='click'
+      nzTrigger='focus'
       [nzContent]='contentTemplate'
       nzPlacement='bottomRight'
       nzOverlayClassName='login-wrapper--popover_content__wrapper'
+      (click)='handleLogin()'
+      [nzVisible]='isVisible && isLogined'
       >
       <nz-avatar nzIcon="anticon anticon-user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
       <span class='login-arrow-down'></span>
@@ -77,8 +79,9 @@
       </div>
     </ng-template>
   </div>
+  <app-registe (hidePopover)='handleHidePopover($event)'  [isVisible]='isVisible'></app-registe>
   <!-- <button nz-button nzType="default" style='float:right' (click)='handleLogin()'>login9999</button> -->
-  <nz-modal [(nzVisible)]="isVisible" nzTitle="" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <!-- <nz-modal [(nzVisible)]="isVisible" nzTitle="" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
     <button nz-button nzType="default" (click)="handleToggleLogin()" *ngIf="!showLoginForm">注册</button>
     <div *ngIf="showLoginForm">
       <form
@@ -117,5 +120,5 @@
         <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit111222211</button>
       </form>
     </div>
-  </nz-modal>
+  </nz-modal> -->
 </div>

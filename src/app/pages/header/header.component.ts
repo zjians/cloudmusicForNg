@@ -18,21 +18,24 @@ export class HeaderComponent implements OnInit {
   isVisible = false;
   validateForm: FormGroup;
   showLoginForm = false;
+  isLogined: boolean;
 
   constructor(
     private fb: FormBuilder,
-    private loginApi: LoginService
+    private loginApi: LoginService,
   ) { }
 
   ngOnInit() {
-    console.log('test');
     this.validateForm = this.fb.group({
       userName: [ null, [ Validators.required, this.testValidator] ],
       password: [ null, [ Validators.required ] ]
     });
+    this.loginApi.logined$.subscribe((res: boolean) => {
+      this.isLogined = res;
+      console.log('登录了');
+    });
   }
   handleLogin () {
-    console.log('login');
     this.isVisible = !this.isVisible;
   }
   handleCancel () {
@@ -42,9 +45,15 @@ export class HeaderComponent implements OnInit {
   handleOk() {
     // this.isVisible = false;
   }
+
   handleToggleLogin () {
     this.showLoginForm = true;
   }
+
+  handleHidePopover(status: boolean) {
+    this.isVisible = status;
+  }
+
   testValidator(control: FormControl) {
     if (control.value && control.value === '123') {
       console.log(control);
@@ -53,13 +62,13 @@ export class HeaderComponent implements OnInit {
   }
 
   submitForm (event, value) {
-    console.log(value);
-    this.loginApi.getLogin({
-      phone: value.userName,
-      password: value.password
-    }).subscribe((res) => {
-      console.log(res);
-    });
+    // console.log(value);
+    // this.loginApi.getLogin({
+    //   phone: value.userName,
+    //   password: value.password
+    // }).subscribe((res) => {
+    //   console.log(res);
+    // });
   }
 
   handleMax () {
