@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CreateAsideMenuItem } from 'src/app/interfaces/aside-menu-item';
 
 @Component({
   selector: 'app-aside-menu-item',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AsideMenuItemComponent implements OnInit {
   @Input()
-  title: string;
+  data;
 
   constructor() { }
 

@@ -1,3 +1,40 @@
-.aside-menu-item-wrapper{
-  border: 1px solid red;
+@import url('../../assets/less/base.less');
+.aside-menu-item{
+  cursor: pointer;
+  line-height: normal;
+  margin: 0 -10px;
+  overflow: hidden;
+  position: relative;
+  a{
+    float: left;
+    display: flex;
+    width:100%;
+    padding:8px 0;
+    text-align: left;
+    color: #333;
+    text-decoration: none;
+    &>span:first-child{
+      width: 50px;
+      padding-left: 20px;
+    }
+    &>span:last-child{
+      flex:1;
+    }
+  }
+  .active{
+    background: darken(#e6e6e6, 10%);
+    &::before{
+      content: '';
+      position: absolute;
+      left:0;
+      top:4px;
+      bottom: 4px;
+      width:3px;
+      background: lighten(@baseColor, 10%);
+    }
+  }
+  .rightIcon{
+    float: right;
+    margin-right: 10px;
+  }
 }

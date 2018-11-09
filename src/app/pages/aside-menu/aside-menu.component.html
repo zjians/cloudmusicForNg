@@ -1,3 +1,10 @@
 <div class='aside-menu-wrapper'>
-  <ng-content></ng-content>
+  <div class='aside-menu-item-wrapper' *ngFor="let port of menuList">
+    <p class='menu-item-title'>
+      <span>{{port.name}}</span>
+      <span>icon</span>
+    </p>
+    <app-aside-menu-item *ngFor="let item of port.list" [data]='item'></app-aside-menu-item>
+  </div>
+  <!-- <ng-content></ng-content> -->
 </div>

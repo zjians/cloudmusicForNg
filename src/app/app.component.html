@@ -4,11 +4,11 @@
   </nz-header>
   <nz-layout>
     <nz-sider>
-      <app-aside-menu>
-        <app-aside-menu-item title='推荐'></app-aside-menu-item>
-      </app-aside-menu>
+      <app-aside-menu></app-aside-menu>
     </nz-sider>
-    <nz-content>Content</nz-content>
+    <nz-content class='content-wrapper'>
+      <router-outlet></router-outlet>
+    </nz-content>
   </nz-layout>
   <nz-footer>Footer</nz-footer>
 </nz-layout>

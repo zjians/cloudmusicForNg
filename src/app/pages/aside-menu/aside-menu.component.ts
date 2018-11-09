@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateAsideMenuItem } from 'src/app/interfaces/aside-menu-item';
 
 @Component({
   selector: 'app-aside-menu',
@@ -7,18 +8,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsideMenuComponent implements OnInit {
 
-  menuList: any[];
+  menuList: CreateAsideMenuItem[];
 
   constructor() { }
 
   ngOnInit() {
     this.menuList = [
       {
-        icon: '',
-        title: '',
-        url: ''
-      }
-    ];
+        name: '推荐',
+        list: [
+          {
+            icon: '',
+            title: '发现音乐',
+            url: 'findMusic'
+          },
+          {
+            icon: '',
+            title: '私人FM',
+            url: 'privateFm'
+          },
+          {
+            icon: '',
+            title: 'FM',
+            url: 'publicFm'
+          },
+          {
+            icon: '',
+            title: '朋友',
+            url: 'frend'
+          }
+        ],
+      },
+      {
+        name: '我的音乐',
+        list: [
+          {
+            icon: '',
+            title: 'item2',
+            url: 'http://'
+          }
+        ]
+      }];
   }
 
 }

@@ -12,6 +12,11 @@ import { HeaderComponent } from './pages/header/header.component';
 import { AsideMenuComponent } from './pages/aside-menu/aside-menu.component';
 import { AsideMenuItemComponent } from './pages/aside-menu-item/aside-menu-item.component';
 import { RegisteComponent } from './pages/registe/registe.component';
+import { appRouting } from './app.router';
+import { FindMusicComponent } from './pages/find-music/find-music.component';
+import { PrivateFmComponent } from './pages/private-fm/private-fm.component';
+import { PublicFmComponent } from './pages/public-fm/public-fm.component';
+import { FrendComponent } from './pages/frend/frend.component';
 
 registerLocaleData(zh);
 
@@ -22,6 +27,10 @@ registerLocaleData(zh);
     AsideMenuComponent,
     AsideMenuItemComponent,
     RegisteComponent,
+    FindMusicComponent,
+    PrivateFmComponent,
+    PublicFmComponent,
+    FrendComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,8 @@ registerLocaleData(zh);
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+    appRouting
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
