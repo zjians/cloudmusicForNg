@@ -11,44 +11,42 @@ export class LoginService {
   logined = false;
   isLoginSubject = new Subject();
   logined$ = this.isLoginSubject.asObservable();
+  userInfo = {};
 
   constructor(
     private httpClient: HttpClient,
   ) {
-    setTimeout(() => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    if (userInfo) {
+      this.userInfo = userInfo;
       this.logined = true;
+    }
+  }
+
+  handleLogin (phone: string, password: string) {
+    const url = `${environment.baseUrl}/login/cellphone?phone=${phone}&password=${password}`;
+    this.httpClient.get(url).subscribe((res: any) => {
+      if (res.code === 200 && res.loginType === 1) {
+        this.userInfo = res.profile;
+        this.logined = true;
+      } else {
+        this.userInfo = null;
+        this.logined = false;
+      }
+      localStorage.setItem('userInfo', JSON.stringify(this.userInfo));
       this.isLoginSubject.next(this.logined);
-    }, 5000);
+    });
   }
 
-  handleLogin () {
-    // const url = environment.baseUrl +
-    // this.httpClient.get <UserDef>(
-    //   url,
-    //   {
-    //     params
-    //   }
-    // ) {
-
-    // };
+  handleLoginOut () {
+    const url = `${environment.baseUrl}/logout`;
+    this.httpClient.post(url, {}).subscribe((res: any) => {
+      if (res.code === 200) {
+        this.userInfo = {};
+        this.logined = false;
+        this.isLoginSubject.next(this.logined);
+        localStorage.setItem('userInfo', null);
+      }
+    });
   }
-  // getLogin (
-  //   {
-  //     phone,
-  //     password,
-  //   }
-  // ) {
-  //   const url = 'http://127.0.0.1:3000/login/cellphone';
-  //   return this.http
-  //     .get(
-  //       url,
-  //       {
-  //         observe: 'response',
-  //         params: {
-  //           phone,
-  //           password
-  //         },
-  //       }
-  //     );
-  // }
 }

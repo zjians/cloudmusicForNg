@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   validateForm: FormGroup;
   showLoginForm = false;
   isLogined: boolean;
+  userInfo = {};
 
   constructor(
     private fb: FormBuilder,
@@ -30,9 +31,11 @@ export class HeaderComponent implements OnInit {
       userName: [ null, [ Validators.required, this.testValidator] ],
       password: [ null, [ Validators.required ] ]
     });
+    this.userInfo = this.loginApi.userInfo;
+    this.isLogined = this.loginApi.logined;
     this.loginApi.logined$.subscribe((res: boolean) => {
       this.isLogined = res;
-      console.log('登录了');
+      this.userInfo = this.loginApi.userInfo;
     });
   }
   handleLogin () {
@@ -62,7 +65,7 @@ export class HeaderComponent implements OnInit {
   }
 
   submitForm (event, value) {
-    // console.log(value);
+    console.log(value);
     // this.loginApi.getLogin({
     //   phone: value.userName,
     //   password: value.password
@@ -99,6 +102,7 @@ export class HeaderComponent implements OnInit {
 
   handleLoginOut () {
     console.log('退出登陆');
+    this.loginApi.handleLoginOut();
   }
 
 }

@@ -1,42 +1,30 @@
 <div class='app-registe-wrapper'>
   <nz-modal [(nzVisible)]="isVisible && !isLogined" nzTitle="" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
-    <button nz-button nzType="default" (click)="handleToggleLogin()" *ngIf="!showLoginForm">注册</button>
-    <div *ngIf="showLoginForm">
-      <form
-        nz-form
-        [formGroup]="validateForm"
-        class="login-form"
-        (ngSubmit)="submitForm($event,validateForm.value)">
-        <nz-form-item>
-            <nz-form-label [nzSpan]="7" nzRequired>用户名</nz-form-label>
-            <nz-form-control [nzSpan]="12" nzHasFeedback>
-              <input nz-input formControlName="userName" placeholder="请填写用户名">
-              <nz-form-explain *ngIf="validateForm.get('userName').dirty && validateForm.get('userName').errors || validateForm.get('userName').pending ">
-                <ng-container *ngIf="validateForm.get('userName').hasError('required')">
-                  Please input your username!
-                </ng-container>
-                <ng-container *ngIf="validateForm.get('userName').hasError('duplicated')">
-                  The username is redundant!
-                </ng-container>
-                <ng-container *ngIf="validateForm.get('userName').pending">
-                  Validating...
-                </ng-container>
-              </nz-form-explain>
-            </nz-form-control>
-        </nz-form-item>
-        <nz-form-item>
-          <nz-form-label [nzSpan]="7" nzRequired>密码</nz-form-label>
-          <nz-form-control [nzSpan]="12" nzHasFeedback>
-              <input nz-input formControlName="password" placeholder="请填写密码">
-              <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors || validateForm.get('password').pending ">
-                  <ng-container *ngIf="validateForm.get('password').hasError('required')">
-                    Please input your password!
-                  </ng-container>
-                </nz-form-explain>
-          </nz-form-control>
-        </nz-form-item>
-        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit111222211</button>
-      </form>
-    </div>
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event)">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group [nzPrefix]="prefixUser">
+            <input formControlName="userName" nz-input placeholder="用户名">
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('userName').dirty && validateForm.get('userName').hasError('required')">请输入手机号！</nz-form-explain>
+          <nz-form-explain *ngIf="!validateForm.get('userName').hasError('required') && validateForm.get('userName').dirty && validateForm.get('userName').hasError('notPhone')">请输入正确的手机号！</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group [nzPrefix]="prefixLock">
+            <input formControlName="password" nz-input type="password" placeholder="密码">
+          </nz-input-group>
+          <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">请输入密码!</nz-form-explain>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button nzType="primary" [disabled]="!validateForm.valid">登录</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
+    <ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>
   </nz-modal>
 </div>

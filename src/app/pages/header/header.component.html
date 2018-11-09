@@ -20,14 +20,14 @@
       (click)='handleLogin()'
       [nzVisible]='isVisible && isLogined'
       >
-      <nz-avatar nzIcon="anticon anticon-user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+      <nz-avatar nzIcon="anticon anticon-user" [nzSrc]='userInfo.avatarUrl'></nz-avatar>
       <span class='login-arrow-down'></span>
     </div>
     <ng-template #contentTemplate>
       <div class='popover-content'>
         <div class='popover-header'>
-            <nz-avatar nzSize="large" nzIcon="anticon anticon-user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
-            <span class='popover-userName'>守护四叶草</span>
+            <nz-avatar nzSize="large" nzIcon="anticon anticon-user" [nzSrc]='userInfo.avatarUrl'></nz-avatar>
+            <span class='popover-userName'>{{userInfo.nickname}}</span>
         </div>
         <div class='popover-message'>
           <div>
