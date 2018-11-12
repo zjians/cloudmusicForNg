@@ -1,6 +1,10 @@
 <div class='aside-menu-item'>
-  <a [routerLink]="[data.url]" routerLinkActive="active">
-    <span>icon</span>
+  <a *ngIf="data.id" [routerLink]="[data.url, data.id]" routerLinkActive="active">
+    <span [ngClass]="data.icon"></span>
+    <span>{{data.title}}</span>
+  </a>
+  <a *ngIf="!data.id" [routerLink]="[data.url]" routerLinkActive="active">
+    <span [ngClass]="data.icon"></span>
     <span>{{data.title}}</span>
   </a>
   <!-- <span class='rightIcon'>icon</span> -->

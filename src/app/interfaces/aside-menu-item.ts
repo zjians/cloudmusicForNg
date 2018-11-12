@@ -6,4 +6,5 @@ interface MenuItemList {
 export interface CreateAsideMenuItem {
   name: string;
   list: MenuItemList[];
+  icon?: string;
 }

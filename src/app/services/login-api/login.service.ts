@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserDef } from 'src/app/interfaces/user-def';
+import { UserInfo } from 'src/app/interfaces/user-info';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
 
@@ -11,7 +12,7 @@ export class LoginService {
   logined = false;
   isLoginSubject = new Subject();
   logined$ = this.isLoginSubject.asObservable();
-  userInfo = {};
+  userInfo: UserInfo;
 
   constructor(
     private httpClient: HttpClient,
@@ -42,7 +43,7 @@ export class LoginService {
     const url = `${environment.baseUrl}/logout`;
     this.httpClient.post(url, {}).subscribe((res: any) => {
       if (res.code === 200) {
-        this.userInfo = {};
+        this.userInfo = <any>{};
         this.logined = false;
         this.isLoginSubject.next(this.logined);
         localStorage.setItem('userInfo', null);

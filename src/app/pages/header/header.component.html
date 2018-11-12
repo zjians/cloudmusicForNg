@@ -20,7 +20,7 @@
       (click)='handleLogin()'
       [nzVisible]='isVisible && isLogined'
       >
-      <nz-avatar nzIcon="anticon anticon-user" [nzSrc]='userInfo.avatarUrl'></nz-avatar>
+      <nz-avatar nzIcon="anticon anticon-user" [nzSrc]='userInfo?.avatarUrl'></nz-avatar>
       <span class='login-arrow-down'></span>
     </div>
     <ng-template #contentTemplate>

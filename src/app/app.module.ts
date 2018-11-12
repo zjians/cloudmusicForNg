@@ -17,6 +17,7 @@ import { FindMusicComponent } from './pages/find-music/find-music.component';
 import { PrivateFmComponent } from './pages/private-fm/private-fm.component';
 import { PublicFmComponent } from './pages/public-fm/public-fm.component';
 import { FrendComponent } from './pages/frend/frend.component';
+import { SongContainComponent } from './pages/song-contain/song-contain.component';
 
 registerLocaleData(zh);
 
@@ -31,6 +32,7 @@ registerLocaleData(zh);
     PrivateFmComponent,
     PublicFmComponent,
     FrendComponent,
+    SongContainComponent,
   ],
   imports: [
     BrowserModule,
