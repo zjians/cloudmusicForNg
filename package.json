@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "cd ./api && npm run start & npm run dev",
+    "start": "cd ./api && node app.js & npm run dev",
     "dev": "ng serve --port=8080 --configuration hmr",
     "prod": "ng serve --port=8080 --prod",
     "build": "ng build",
@@ -25,7 +25,10 @@
     "core-js": "^2.5.4",
     "ng-zorro-antd": "^1.8.0",
     "rxjs": "~6.2.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "apicache": "^1.2.1",
+    "express": "^4.16.3",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
@@ -47,6 +50,9 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~2.9.2"
+    "typescript": "~2.9.2",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^5.1.1",
+    "power-assert": "^1.5.0"
   }
 }

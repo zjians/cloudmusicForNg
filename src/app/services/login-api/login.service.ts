@@ -22,6 +22,7 @@ export class LoginService {
       this.userInfo = userInfo;
       this.logined = true;
     }
+    this.isLoginSubject.next(this.logined);
   }
 
   handleLogin (phone: string, password: string) {

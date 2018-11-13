@@ -1,0 +1,26 @@
+<div class='contain-generailze-wrapper'>
+  <img [src]="listInfo.coverImgUrl" alt="img">
+  <div class='contain-right'>
+    <div class='generailze-content'>
+      <div class='content-row'>
+        <span class='list-btn lf'>歌单</span>
+        <p class='lf title'>{{listInfo.name}}</p>
+      </div>
+      <div class='content-row'>
+        <nz-avatar nzIcon="anticon anticon-user" [nzSrc]='listInfo.creator.avatarUrl'></nz-avatar>
+        <span class='user-name'>{{listInfo.creator.nickname}}</span>
+        <span class='creat-time'>{{listInfo.createTime | date:'yyyy-MM-dd HH:mm'}} 创建</span>
+      </div>
+    </div>
+    <div class='song-number'>
+      <span>
+        <i>歌曲数</i>
+        <i>{{listInfo.trackCount}}</i>
+      </span>
+      <span>
+        <i>收听数</i>
+        <i>{{listInfo.playCount}}</i>
+      </span>
+    </div>
+  </div>
+</div>

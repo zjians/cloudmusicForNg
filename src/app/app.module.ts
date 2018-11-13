@@ -18,6 +18,8 @@ import { PrivateFmComponent } from './pages/private-fm/private-fm.component';
 import { PublicFmComponent } from './pages/public-fm/public-fm.component';
 import { FrendComponent } from './pages/frend/frend.component';
 import { SongContainComponent } from './pages/song-contain/song-contain.component';
+import { ContainGeneralizeComponent } from './pages/song-contain/contain-generalize/contain-generalize.component';
+import { ContainTableComponent } from './pages/song-contain/contain-table/contain-table.component';
 
 registerLocaleData(zh);
 
@@ -33,6 +35,8 @@ registerLocaleData(zh);
     PublicFmComponent,
     FrendComponent,
     SongContainComponent,
+    ContainGeneralizeComponent,
+    ContainTableComponent,
   ],
   imports: [
     BrowserModule,

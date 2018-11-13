@@ -1,0 +1,73 @@
+@import url('../../../assets/less/base.less');
+.contain-generailze-wrapper{
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+  &>img{
+    width: 182px;
+    height: 182px;
+  }
+  .contain-right{
+    flex:1;
+    margin-left: 34px;
+    position: relative;
+    .song-number{
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      &>span{
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        i:first-child{
+          color: @minorColor;
+        }
+        i:last-child{
+          font-weight: 700;
+        }
+      }
+      &>span:first-child{
+        margin-right: 20px;
+        &::after{
+          content: '';
+          position: absolute;
+          border-left:1px solid @minorColor;
+          height: 100%;
+          transform: translate(29px,0) rotate(17deg);
+        }
+      }
+    }
+    .generailze-content{
+      overflow: hidden;
+      text-align: left;
+      .content-row{
+        overflow: hidden;
+        margin-bottom: 10px;
+        .list-btn{
+          background: @baseColor;
+          padding: 3px 8px;
+          border-radius: 5px;
+          color: #fff;
+          margin-right: 10px;
+        }
+        .title{
+          font-size: @bigFontSize;
+          font-weight: 600;
+        }
+        .user-name{
+          margin:0 10px;
+          font-weight: 600;
+        }
+        .creat-time{
+          color: @minorColor;
+        }
+      }
+    }
+  }
+}
