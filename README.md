@@ -1,3 +1,8 @@
+# tips
+
+项目依赖NeteaseCloudMusicApi为子模块。所以使用以下命令clone:
+git clone --recursive https://github.com/zjians/cloudmusicForNg.git
+
 # Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
