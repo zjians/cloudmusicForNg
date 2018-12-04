@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { PlayListItem } from 'src/app/interfaces/playList';
 @Component({
   selector: 'app-contain-table',
   templateUrl: './contain-table.component.html',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContainTableComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  playList: PlayListItem;
+
+  commentNum = 0;
+
+  constructor(
+  ) {
+  }
 
   ngOnInit() {
   }

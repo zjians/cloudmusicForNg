@@ -20,6 +20,7 @@ import { FrendComponent } from './pages/frend/frend.component';
 import { SongContainComponent } from './pages/song-contain/song-contain.component';
 import { ContainGeneralizeComponent } from './pages/song-contain/contain-generalize/contain-generalize.component';
 import { ContainTableComponent } from './pages/song-contain/contain-table/contain-table.component';
+import { NumberPipePipe } from './pipe/number-pipe.pipe';
 
 registerLocaleData(zh);
 
@@ -37,6 +38,7 @@ registerLocaleData(zh);
     SongContainComponent,
     ContainGeneralizeComponent,
     ContainTableComponent,
+    NumberPipePipe,
   ],
   imports: [
     BrowserModule,
