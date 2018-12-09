@@ -21,6 +21,7 @@ import { SongContainComponent } from './pages/song-contain/song-contain.componen
 import { ContainGeneralizeComponent } from './pages/song-contain/contain-generalize/contain-generalize.component';
 import { ContainTableComponent } from './pages/song-contain/contain-table/contain-table.component';
 import { NumberPipePipe } from './pipe/number-pipe.pipe';
+import { PlayerComponent } from './pages/player/player.component';
 
 registerLocaleData(zh);
 
@@ -39,6 +40,7 @@ registerLocaleData(zh);
     ContainGeneralizeComponent,
     ContainTableComponent,
     NumberPipePipe,
+    PlayerComponent,
   ],
   imports: [
     BrowserModule,

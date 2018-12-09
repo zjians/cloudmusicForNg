@@ -1,0 +1,32 @@
+<div class='player-wrapper'>
+  <div class='audio'>
+      <audio id='audioDom' [src]="playUrl" autoplay preload></audio>
+  </div>
+  <div class='control-group'>
+    <span class='icon-bg'>
+        <i nz-icon type='step-backward' theme='outline' class='icon-left'></i>
+    </span>
+    <span class='icon-bg icon-bg-big' (click)='handleTogglePlay()'>
+            <!-- this.audioDom.paused -->
+        <i nz-icon type="caret-right" theme="outline" *ngIf="audioDom && audioDom.paused"></i>
+        <i nz-icon type="pause" theme="outline" *ngIf="(audioDom && audioDom.played)" style='transform: translate(0px, -2px);font-size:20px;'></i>
+    </span>
+    <span class='icon-bg'>
+        <i nz-icon type="step-forward" theme="outline" class='icon-right'></i>
+    </span>
+  </div>
+  <div class='time-line-wrapper'>
+      <nz-slider class='time-line' [nzMin]="0" [nzMax]="240" [(ngModel)]="time"></nz-slider>
+      <div class='time-num-group'>
+        <span>{{time }}</span>
+        <span> / </span>
+        <span> 04:10</span>
+      </div>
+  </div>
+  <div class='control-group-right'>
+    <div class='volume-wrapper'>
+        <i class='wangyi-icon-volume-high'></i>
+        <nz-slider class='volume-line' [nzMin]="0" [nzMax]="100" [(ngModel)]="volume"></nz-slider>
+    </div>
+  </div>
+</div>
