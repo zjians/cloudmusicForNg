@@ -13,11 +13,11 @@ export class PlayerComponent implements OnInit, AfterViewInit {
   volume = 0;
   currentSong: PlayListItem;
   playUrl: string;
-  audioDom: ElementRef;
+  audioDom; // 我设置为ElementRef为什么会导致下面使用this.audioDom.paused报错
   constructor(
     public store: StoreService,
     public playService: PlayListService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
   ) { }
 
   ngOnInit() {
