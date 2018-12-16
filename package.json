@@ -6,7 +6,7 @@
     "start": "cd ./NeteaseCloudMusicApi && node app.js & npm run dev",
     "dev": "ng serve --port=8080 --configuration hmr",
     "prod": "ng serve --port=8080 --prod",
-    "build": "ng build",
+    "build": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

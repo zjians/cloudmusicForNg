@@ -1,5 +1,5 @@
 <div class='app-registe-wrapper'>
-  <nz-modal [(nzVisible)]="isVisible && !isLogined" nzTitle="" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <nz-modal [(nzVisible)]="isVisible && !isLogined" nzTitle="" (nzOnCancel)="handleCancel()">
     <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event)">
       <nz-form-item>
         <nz-form-control>

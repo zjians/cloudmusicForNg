@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   validateForm: FormGroup;
   showLoginForm = false;
   isLogined: boolean;
-  userInfo = {};
+  userInfo = {} as any;
 
   constructor(
     private fb: FormBuilder,
