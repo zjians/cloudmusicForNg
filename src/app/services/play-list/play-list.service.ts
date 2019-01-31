@@ -24,7 +24,8 @@ export class PlayListService {
     return this.httpClient.get(url);
   }
 
-  getSongUrl (id: number): any { // 获取指定歌曲播放url
+  /** 获取歌曲播放地址 */
+  getSongUrl (id: number): any {
     const url = `${environment.baseUrl}/song/url?id=${id}`;
     return this.httpClient.get(url);
   }

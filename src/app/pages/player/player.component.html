@@ -8,25 +8,40 @@
     </span>
     <span class='icon-bg icon-bg-big' (click)='handleTogglePlay()'>
             <!-- this.audioDom.paused -->
-        <i nz-icon type="caret-right" theme="outline" *ngIf="audioDom && audioDom.paused"></i>
-        <i nz-icon type="pause" theme="outline" *ngIf="(audioDom && audioDom.played)" style='transform: translate(0px, -2px);font-size:20px;'></i>
+        <i nz-icon type="caret-right" theme="outline" *ngIf="paused"></i>
+        <i nz-icon type="pause" theme="outline" *ngIf="!paused" style='transform: translate(0px, -2px);font-size:20px;'></i>
     </span>
     <span class='icon-bg'>
         <i nz-icon type="step-forward" theme="outline" class='icon-right'></i>
     </span>
   </div>
   <div class='time-line-wrapper'>
-      <nz-slider class='time-line' [nzMin]="0" [nzMax]="240" [(ngModel)]="time"></nz-slider>
+      <nz-slider
+        class='time-line'
+        [nzMin]="0"
+        [nzMax]="maxTime"
+        [(ngModel)]="currentTime"
+        [nzTipFormatter]="filterTime"
+        (ngModelChange)="setCurrentTime($event)"
+      >
+      </nz-slider>
       <div class='time-num-group'>
-        <span>{{time }}</span>
+        <span>{{ filterTime(currentTime) }}</span>
         <span> / </span>
-        <span> 04:10</span>
+        <span> {{filterTime(maxTime) || '00:00'}}</span>
       </div>
   </div>
   <div class='control-group-right'>
     <div class='volume-wrapper'>
         <i class='wangyi-icon-volume-high'></i>
-        <nz-slider class='volume-line' [nzMin]="0" [nzMax]="100" [(ngModel)]="volume"></nz-slider>
+        <nz-slider
+            class='volume-line'
+            [nzMin]="0"
+            [nzMax]="100"
+            [(ngModel)]="volume"
+            (ngModelChange)="setVolume($event)"
+            >
+        </nz-slider>
     </div>
   </div>
 </div>
