@@ -1,4 +1,4 @@
-# tips
+# tipstest
 
 项目依赖NeteaseCloudMusicApi为子模块。所以使用以下命令clone:
 git clone --recursive https://github.com/zjians/cloudmusicForNg.git
